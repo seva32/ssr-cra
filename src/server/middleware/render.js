@@ -1,8 +1,8 @@
-import escapeStringRegexp from 'escape-string-regexp';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import escapeStringRegexp from "escape-string-regexp";
+import React from "react";
+import ReactDOMServer from "react-dom/server";
 
-import App from '../../App';
+import App from "../../App.jsx";
 
 const renderMiddleware = () => (req, res) => {
   let html = req.html;
@@ -11,10 +11,10 @@ const renderMiddleware = () => (req, res) => {
     HTML_CONTENT: htmlContent,
   };
 
-  Object.keys(htmlReplacements).forEach(key => {
+  Object.keys(htmlReplacements).forEach((key) => {
     const value = htmlReplacements[key];
     html = html.replace(
-      new RegExp('__' + escapeStringRegexp(key) + '__', 'g'),
+      new RegExp(`__${escapeStringRegexp(key)}__`, "g"),
       value
     );
   });
