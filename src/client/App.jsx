@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Container } from "./App.style";
 import SideBar from "./SideBarUI.jsx";
-import { ReactComponent as Logo } from "./apple.svg";
+import { ReactComponent as Logo } from "./assets/img/logo.svg";
 
 function App() {
   return (

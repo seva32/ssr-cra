@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import express from "express";
 
 let app = require("./server").default;
