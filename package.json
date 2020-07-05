@@ -9,9 +9,15 @@
     "eslint-plugin-react-hooks": "^4.0.5",
     "eslint-plugin-sonarjs": "^0.5.0",
     "express": "^4.17.1",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-ssr-scripts": "2.2.3"
+    "react-redux": "^7.2.0",
+    "react-ssr-scripts": "2.2.3",
+    "redux": "^4.0.5",
+    "semantic-ui-react": "^0.88.2",
+    "source-map-explorer": "^2.4.2",
+    "styled-components": "^5.1.1"
   },
   "eslintConfig": {
     "extends": [
@@ -36,7 +42,10 @@
     "start": "react-ssr-scripts start",
     "build": "react-ssr-scripts build",
     "test": "react-ssr-scripts test",
-    "eject": "react-ssr-scripts eject"
+    "eject": "react-ssr-scripts eject",
+    "analyze": "source-map-explorer 'build/public/static/js/*.js'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "browserslist": {
     "production": [
@@ -49,5 +58,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-storyshots": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.0.6",
+    "react-test-renderer": "^16.13.1"
+  },
+  "resolutions": {
+    "babel-loader": "^8.0.6"
   }
 }
