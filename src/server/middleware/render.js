@@ -1,14 +1,19 @@
 import escapeStringRegexp from "escape-string-regexp";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
+import { ServerStyleSheet } from "styled-components";
 
-import App from "../../App.jsx";
+import App from "../../client/App.jsx";
 
 const renderMiddleware = () => (req, res) => {
   let html = req.html;
-  const htmlContent = ReactDOMServer.renderToString(<App />);
+  const sheet = new ServerStyleSheet();
+  const htmlContent = ReactDOMServer.renderToString(
+    sheet.collectStyles(<App />)
+  );
   const htmlReplacements = {
     HTML_CONTENT: htmlContent,
+    STYLE_TAGS: sheet.getStyleTags(),
   };
 
   Object.keys(htmlReplacements).forEach((key) => {
